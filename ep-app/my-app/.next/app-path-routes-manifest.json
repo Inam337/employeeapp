@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/complaints/page": "/complaints",
+  "/complaints/list/page": "/complaints/list",
+  "/login/page": "/login",
+  "/complaints/register/page": "/complaints/register",
+  "/page": "/",
+  "/onboarding/page": "/onboarding",
+  "/dashboard/page": "/dashboard",
+  "/register/page": "/register",
+  "/users/page": "/users"
+}
