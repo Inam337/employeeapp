@@ -10,8 +10,6 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import AvgResponseChart from "../charts/average-response-time.chart";
-import DistrictStatsChart from "../charts/stats-by-district.chart";
 import { CommonIcon } from "@/common/icons";
 import { CommonIconNames, IconColors } from "@/common/icons/types";
 import StatsCard from "@/components/common/StatsCard";
@@ -110,16 +108,6 @@ const DashboardComponent: FC = () => {
             />
           </div>
         </div>
-        <div className="col-span-1 rounded-xl shadow-sm p-4">
-          <h3 className="text-lg font-semibold">Average Response Time</h3>
-          <p className="text-sm text-gray-500">Top 5 Districts</p>
-          <AvgResponseChart />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 gap-1 p-4 rounded-xl shadow-sm">
-        <h3 className="text-lg font-semibold">Stats Districts Chart</h3>
-        <p className="text-sm text-gray-500">Top 5 Districts</p>
-        <DistrictStatsChart />
       </div>
     </div>
   );

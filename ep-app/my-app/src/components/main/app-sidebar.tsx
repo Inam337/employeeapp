@@ -33,13 +33,11 @@ interface AppSidebarProps {
     versionLabel?: string;
     homeLabel?: string;
     insightsLabel?: string;
-    complaintsLabel?: string;
-    usersLabel?: string;
-    reportsLabel?: string;
-    dataLabel?: string;
-    notificationsLabel?: string;
-    feedbacksLabel?: string;
-    settingLabel?: string;
+    uploadDataLabel?: string;
+    dataSourceLabel?: string;
+    dataPointsLabel?: string;
+    calculationsLabel?: string;
+    runCalculationsLabel?: string;
   };
 }
 
@@ -68,13 +66,11 @@ export function AppSidebar({ translations = {} }: AppSidebarProps) {
   const {
     sidebarNavigation = "Navigation",
     insightsLabel = "Insights",
-    complaintsLabel = "Complaints",
-    usersLabel = "Users",
-    reportsLabel = "Reports",
-    dataLabel = "Data Management",
-    notificationsLabel = "Notifications",
-    feedbacksLabel = "Feedbacks",
-    settingLabel = "Settings",
+    uploadDataLabel = "Employee Upload Data",
+    dataSourceLabel = "Data Source",
+    dataPointsLabel = "Data Points",
+    calculationsLabel = "Calculations",
+    runCalculationsLabel = "Run Calculations",
   } = translations;
 
   // Define all routes with their URLs and icons
@@ -85,51 +81,38 @@ export function AppSidebar({ translations = {} }: AppSidebarProps) {
       icon: CommonIconNames.DASHBOARD_ICON,
       isImplemented: true,
     },
+
     {
-      label: complaintsLabel,
-      url: "/complaints",
-      icon: CommonIconNames.FILE_ICON,
+      label: uploadDataLabel,
+      url: "/employee",
+      icon: CommonIconNames.REPORT_ICON,
       isImplemented: true,
     },
     {
-      label: usersLabel,
-      url: "/users",
-      icon: CommonIconNames.USER_ICON,
-      isImplemented: false,
-    },
-    {
-      label: reportsLabel,
-      url: "/reports",
-      icon: CommonIconNames.REPORT_ICON,
-      isImplemented: false,
-    },
-    {
-      label: dataLabel,
-      url: "/data",
+      label: dataSourceLabel,
+      url: "/data-sources",
       icon: CommonIconNames.DATA_ICON,
-      isImplemented: false,
+      isImplemented: true,
     },
     {
-      label: notificationsLabel,
-      url: "/notifications",
-      icon: CommonIconNames.NOTIFICATION_ICON,
-      isImplemented: false,
+      label: dataPointsLabel,
+      url: "/data-points",
+      icon: CommonIconNames.DATA_ICON,
+      isImplemented: true,
     },
     {
-      label: feedbacksLabel,
-      url: "/feedbacks",
-      icon: CommonIconNames.FEEDBACK_ICON,
-      isImplemented: false,
+      label: calculationsLabel,
+      url: "/calculations",
+      icon: CommonIconNames.RESOLUTION_ICON,
+      isImplemented: true,
+    },
+    {
+      label: runCalculationsLabel,
+      url: "/run-calculations",
+      icon: CommonIconNames.CLOCK_ICON,
+      isImplemented: true,
     },
   ];
-
-  // Define settings route separately since it appears in the footer
-  const settingsRoute: SidebarRoute = {
-    label: settingLabel,
-    url: "/settings",
-    icon: CommonIconNames.COG_ICON,
-    isImplemented: false,
-  };
 
   // Handle navigation
   const handleNavigation = (route: SidebarRoute) => {
